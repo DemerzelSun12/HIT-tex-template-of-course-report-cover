@@ -1,0 +1,87 @@
+%!TEX program = pdflatex
+\documentclass[UTF8]{elegantpaper}
+\usepackage{ctex}
+\usepackage{geometry}
+\usepackage{ulem}
+\usepackage{calc}
+\usepackage{tikz}
+\geometry{left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
+
+\newlength{\textlen}
+\newlength{\lablen}
+\setlength{\lablen}{0pt}
+
+\newcommand\college{学院}
+\newcommand\majorID{专业}
+\newcommand\IDnumber{学号}
+\newcommand\thesisauthor{姓名}
+\newcommand\adviser{指导教师}
+\newcommand\coadviser{协助指导教师}
+\newcommand\applydate{日期}
+
+\begin{document}
+
+\begin{figure}[t]
+	\parbox[b]{2cm}{
+		\includegraphics[scale=0.2]{HIT.jpg} % 校徽图片
+	}
+	\parbox[b]{12cm}{
+		\begin{center}
+			\includegraphics[scale=0.8]{hitname.jpg} 
+			% 学校名图片，两张图片必须放在与.tex文件同一目录下，名字可以自己相应更改，但必须保持一致
+			
+			\large \textbf{Harbin Institute of Technology} 
+		\end{center}
+	}
+\end{figure}
+
+\begin{center}
+	\quad \\
+	\quad \\
+	\quad \\
+	\heiti \fontsize{30}{12pt} 大标题 % 大标题 黑体，字号30，行距12pt
+	\vskip 2.5cm
+	\heiti \zihao{2} 小标题 %小标题可插入 \\ 换行，黑体，字号2
+\end{center}
+\vskip 6cm
+
+\begin{center}
+	\foreach \x in {\college, \majorID, \thesisauthor, \adviser, \coadviser, \applydate} {
+		\settowidth{\textlen}{\x}
+		\ifdim \textlen > \lablen
+		\setlength{\lablen}{\textlen}
+		\else
+		\relax
+		\fi
+	}
+	\setlength{\lablen}{\widthof{\coadviser}}
+	\begin{tabular} {ll}
+		% 如果不需要某一行，直接将整行删去或注释即可
+		
+		% 学院行
+		\makebox[\the\lablen][s]{\college} ：     & \underline{\makebox[4cm][c]{XXXXXXX学院}} 		\\ 
+		
+		% 专业行
+		\makebox[\the\lablen][s]{\majorID} ：     & \underline{\makebox[4cm][c]{XX专业}} 		\\ 
+		
+		% 学号行
+		\makebox[\the\lablen][s]{\IDnumber} ：    & \underline{\makebox[4cm][c]{1XXXXXXXXX}} 		\\ 
+		
+		% 姓名行
+		\makebox[\the\lablen][s]{\thesisauthor} ：& \underline{\makebox[4cm][c]{姓名}} 		\\ 
+		
+		% 指导教师行
+		\makebox[\the\lablen][s]{\adviser} ：     & \underline{\makebox[4cm][c]{指导教师}} 		\\ 
+		
+		% 协助指导教师行
+		\makebox[\the\lablen][s]{\coadviser} ：   & \underline{\makebox[4cm][c]{协助指导教师}} 		\\ 
+		
+		% 日期行
+		\makebox[\the\lablen][s]{\applydate} ：   & \underline{\makebox[4cm][c]{日期}} 		\\ 	
+	\end{tabular}
+	\vspace{4ex}
+	
+\end{center}
+
+% \newpage 使用时取消此行注释即可添加新界面
+\end{document}
