@@ -5,6 +5,7 @@
  此封面已废弃，整个报告已制作完毕，见
  
  github地址：[hitreport](https://github.com/DemerzelSun12/hitreport)
+ 
  或CTAN地址：[hitreport](https://ctan.org/pkg/hitreport)
  
  -----------------------------------
