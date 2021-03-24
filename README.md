@@ -1,8 +1,11 @@
 ﻿# HIT tex template of course report cover
  -----------------------------------
  2021-03-24更新
- 此封面以废弃，整个报告已制作完毕，见
- [hitreport](https://github.com/DemerzelSun12/hitreport)
+ 
+ 此封面已废弃，整个报告已制作完毕，见
+ 
+ github地址：[hitreport](https://github.com/DemerzelSun12/hitreport)
+ 或CTAN地址：[hitreport](https://ctan.org/pkg/hitreport)
  
  -----------------------------------
 HIT课程报告封面tex模板
